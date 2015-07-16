@@ -1,0 +1,19 @@
+<form>
+	<label>Name</label>
+	<input ng-model="newAppointment.name"><br><br>
+	
+	<label>Time</label>
+	<input ng-model="newAppointment.time"><br><br>
+	
+	<label>Is public</label>
+	<input type="checkbox" ng-model="newAppointment.public" />
+	
+	<button ng-click="newAppointment.owner=$root.currentUser._id; flushots.push(newAppointment); newAppointment='';">Add</button>
+</form>
+
+<ul>
+	<li ng-repeat="flushot in flushots">
+		<a href="/flushot/{{flushot._id}}">{{flushot.name}}</a><p>{{flushot.time}}</p>
+		<button ng-click="remove(flushot)">X</button>
+	</li>
+</ul>
