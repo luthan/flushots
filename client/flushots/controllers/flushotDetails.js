@@ -1,4 +1,4 @@
-angular.module("flushotsApp").controller('FlushotDetailsController', function($scope, $meteor, $stateParams){
+angular.module("flushotsApp").controller('FlushotDetailsController', ['$scope','$meteor', '$stateParams', function($scope, $meteor, $stateParams){
 	$scope.flushotId = $stateParams.flushotId;
 	$scope.flushot = $meteor.object(Flushots, $stateParams.flushotId).subscribe('flushots');
 	$scope.users = $meteor.collection(Meteor.users, false).subscribe('users');
@@ -14,4 +14,4 @@ angular.module("flushotsApp").controller('FlushotDetailsController', function($s
 	$scope.reset = function(){
 		$scope.flushot.reset();
 	};
-});
+}]);

@@ -1,4 +1,4 @@
-angular.module("flushotsApp").controller('FlushotsListController', function($scope, $meteor){ 
+angular.module("flushotsApp").controller('FlushotsListController', ['$scope','$meteor', function($scope, $meteor){ 
 	$scope.flushots = $meteor.collection(Flushots).subscribe('flushots');
 	$scope.remove = function(flushot){
 		$scope.flushots.remove(flushot);
@@ -6,4 +6,4 @@ angular.module("flushotsApp").controller('FlushotsListController', function($sco
 	$scope.removeAll = function(){
 		$scope.flushots.remove();
 	}
-});
+}]);
