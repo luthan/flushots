@@ -11,3 +11,6 @@ accounts-password
 accounts-ui
 accounts-facebook
 accounts-twitter
+meteortypescript:typescript-libs
+twbs:bootstrap
+insecure

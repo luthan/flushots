@@ -1,0 +1,21 @@
+<div class="col-lg-12">
+	<form>
+		<input ng-model='newHour.name'>
+		<button ng-click="addHour(newHour)">Add</button>
+	</form>
+	<br>
+	<div ng-repeat="hour in hours">
+		<!--{{hour}}-->
+		<div class='col-lg-4'>
+			<!--<div class="col-lg-4 col-lg-offset-4">-->
+				<div style="margin-top:20px;margin-bottom:5px" class="alert alert-success" role="alert"><h2>{{hour.name | hourDisplay}}</h2></div>
+				<div ng-repeat="x in hour.slots">
+					<button class="btn btn-primary" style="margin-bottom: 2px;width:100%">{{hour.name}}:{{x.name}} - Available slots {{8 - x.people.length}}</button>
+				</div>
+			<!--</div>-->
+		</div>
+		
+			
+	</div>
+	<button ng-click="removeAll()">remove all</button>
+</div>

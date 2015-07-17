@@ -1,3 +1,4 @@
+/// <reference path="../../../typings/tsd.d.ts"/>
 angular.module("flushotsApp").controller('FlushotDetailsController', ['$scope','$meteor', '$stateParams', function($scope, $meteor, $stateParams){
 	$scope.flushotId = $stateParams.flushotId;
 	$scope.flushot = $meteor.object(Flushots, $stateParams.flushotId).subscribe('flushots');

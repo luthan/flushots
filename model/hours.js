@@ -1,0 +1,1 @@
+Hours = new Mongo.Collection("hours");

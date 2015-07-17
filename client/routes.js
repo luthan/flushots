@@ -1,3 +1,4 @@
+/// <reference path="../typings/angularjs/angular.d.ts"/>
 // angular.module("flushotsApp").run(["$rootScope", "$state", function($rootScope, $state){
 // 	$rootScope.$on("$stateChangeError", function(event, toState, toParams, fromState, fromParams, error){
 // 		if(error === "AUTH_REQUIRED"){
@@ -25,6 +26,11 @@ angular.module("flushotsApp").config(['$urlRouterProvider', '$stateProvider', '$
 						return $meteor.requireUser();
 					}]
 				}
+			})
+			.state('hours', {
+				url: '/hours',
+				templateUrl: 'client/flushots/views/hours.ng.html',
+				controller: 'HoursController'
 			});
 			
 			$urlRouterProvider.otherwise('/flushots');

@@ -1,3 +1,4 @@
+/// <reference path="../../../typings/tsd.d.ts"/>
 angular.module("flushotsApp").controller('FlushotsListController', ['$scope','$meteor', function($scope, $meteor){ 
 	$scope.flushots = $meteor.collection(Flushots).subscribe('flushots');
 	$scope.remove = function(flushot){
