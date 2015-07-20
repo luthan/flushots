@@ -1,3 +1,3 @@
 Meteor.publish("hours", function(){
-	return Hours.find({});
+	return Hours.find({}, {sort: {name: 1}});
 });

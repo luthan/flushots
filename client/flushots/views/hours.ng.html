@@ -4,13 +4,16 @@
 		<button ng-click="addHour(newHour)">Add</button>
 	</form>
 	<br>
+	<form><input ng-model="person">
+		<button ng-click="loadPerson(person)">Load Person</button>
+	</form>
 	<div ng-repeat="hour in hours">
 		<!--{{hour}}-->
 		<div class='col-lg-4'>
 			<!--<div class="col-lg-4 col-lg-offset-4">-->
 				<div style="margin-top:20px;margin-bottom:5px" class="alert alert-success" role="alert"><h2>{{hour.name | hourDisplay}}</h2></div>
 				<div ng-repeat="x in hour.slots">
-					<button class="btn btn-primary" style="margin-bottom: 2px;width:100%">{{hour.name}}:{{x.name}} - Available slots {{8 - x.people.length}}</button>
+					<button class="btn" ng-class="{ true: 'btn-primary', false: 'btn-danger' }[(8 - x.people.length) > 0]" style="margin-bottom: 2px;width:100%" ng-click="assignSlot(person, hour, x)">{{hour.name}}:{{x.name}} - Available slots {{8 - x.people.length}}</button>
 				</div>
 			<!--</div>-->
 		</div>
